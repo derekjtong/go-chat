@@ -1,6 +1,6 @@
 import React from "react";
 
-const ChatHistory = ({ messages }) => {
+export default function ChatHistory({ messages }) {
   return (
     <div className="bg-neutral-100 m-0 p-20">
       <h2 className="m-0 p-0">Chat History</h2>
@@ -9,6 +9,4 @@ const ChatHistory = ({ messages }) => {
       ))}
     </div>
   );
-};
-
-export default ChatHistory;
+}
