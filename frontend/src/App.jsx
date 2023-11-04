@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { connect, sendMsg } from "./api";
 import Header from "./components/Header";
 import ChatHistory from "./components/ChatHistory";
+import ChatInput from "./components/ChatInput";
 
 export default function App() {
   const [messages, setMessages] = useState([]);
@@ -13,22 +14,12 @@ export default function App() {
     });
   }, []);
 
-  function send() {
-    console.log("hello");
-    sendMsg("hello");
-  }
-
   return (
     <>
       <div>
         <Header />
         <ChatHistory messages={messages} />
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={() => send()}
-        >
-          Send hello
-        </button>
+        <ChatInput sendMsg={sendMsg} />
       </div>
     </>
   );
